@@ -2,9 +2,10 @@
 ## Lab Reports
 [Lab Report 1](https://esthert13.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
 * General github and markdown usage
-***
 
-Markdown Examples!!!
+
+
+# Markdown Examples!!!
 
 To italicize, use asteriks: *Hello, world!*
 
