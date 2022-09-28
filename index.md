@@ -1,32 +1,39 @@
-# Hello, world! with pound and space
-## Hello, world! with two pounds and space
-Hello, world!
+# Esther's Website!
+## Lab Reports
+[Lab Report 1](https://esthert13.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
+* General github and markdown usage
+***
 
-*Hello, world!* with asteriks
+Markdown Examples!!!
 
-**Hello, world!** with two asteriks
+To italicize, use asteriks: *Hello, world!*
 
-[Link](https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg) with square brackets around Link and parenthesis around link
+To bold anything, use two asteriks: **Hello, world!** 
 
-![Image](https://play-lh.googleusercontent.com/XVHP0sBKrRJYZq_dB1RalwSmx5TcYYRRfYMFO18jgNAnxHAIA1osxM55XHYTb3LpkV8) with exclamation mark, square brackets around Image and parenthesis around link
+To create a hyperlink, use square brackets around the word you wish to use for the link, and parentheses around the link: [Cats!](https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg)
 
-Horizontal rule: with three hyphens or asteriks
----
-* Hello, world! lists with asterik and space
-* Hello, world!
-* Hello, world!
----
-1. Hello 
-2. , 
-3. World!
+To add an image, first place an exclamation mark before using square brackets around the word "Image" (or name of image) and parentheses around the image's link: ![Image](https://play-lh.googleusercontent.com/XVHP0sBKrRJYZq_dB1RalwSmx5TcYYRRfYMFO18jgNAnxHAIA1osxM55XHYTb3LpkV8)
+
+To add a horizontal rule, use three asteriks: 
+***
+
+For lists, use an asterik + space: 
+* Milk
+* Bread
+* Butter
+
+For numbered lists, just use numbers + . + space!
+1. First 
+2. Second
+3. Third!
+
+For inline code, use backticks:
+
+`Hello, world!`
 
 
-'Hello, world!' with backticks
+```
+For a code block, use three backticks above and below!
+```
 
-
-...
-code block with three periods above and below
-...
-
-
-> Hello, world! with greater than symbol
+> For a block quote, use a greater-than symbol + space!
