@@ -6,30 +6,35 @@ This is a tutorial on how to install VS code, connect remotely to another comput
 
 
 ## Installing VS Code
-Although I currently already have CS Code installed, I will still show how to download it. 
-1. Head to the [VS Code](https://code.visualstudio.com/download) website. 
-2. Click on whichever option is compatible with your computer (i.e. if you have a Windows operating system, click on the Windows installer).
+Although I currently already have CS Code installed, I will still show how to download it.
+
+First, head to the [VS Code](https://code.visualstudio.com/download) website.
+
+Second, click on whichever option is compatible with your computer (i.e. if you have a Windows operating system, click on the Windows installer).
 
 ![Image](Screenshot1.png) 
 
-3. Open the installer and follow the prompts given. 
-4. After it's finished downloading, launch VS Code to make sure it's working.
+Third, open the installer and follow the prompts given. 
+
+Fourth, after it's finished downloading, launch VS Code to make sure it's working.
 
 
 
 ## Remotely Connecting
 Unfortunately, I was unable to get my SSH login working, although I did use a TA account in our lab session. However, I will still write down the steps to login.
-1. Open the terminal in VS Code using the button "Terminal" on the top left of the application, or with the keyboard shortcut CTRL + `. 
+
+First, open the terminal in VS Code using the button "Terminal" on the top left of the application, or with the keyboard shortcut CTRL + `. 
 
 ![Image](Screenshot2.png)
 
-2. Type `ssh cs15lfa22XX@ieng6.ucsd.edu` into the terminal, replacing XX with the two letters that are part of your personal CS account.
-3. Once prompted, type in your password. Although there is no feedback, it will be recording your keystrokes. Once you're done, press enter. 
+Second, type `ssh cs15lfa22XX@ieng6.ucsd.edu` into the terminal, replacing XX with the two letters that are part of your personal CS account.
+
+Third, once prompted, type in your password. Although there is no feedback, it will be recording your keystrokes. Once you're done, press enter. 
 > If the password is wrong and/or denied for another reason, it will prompt you again afterwards. Unfortunately, this is what happened to my account so I was unable to have a screenshot of a successful login.
 
 ![Image](Screenshot3.png) 
 
-4. After entering your password correctly, it should pull up several lines of code before saying you have successfully logged in remotely.
+Fourth, after entering your password correctly, it should pull up several lines of code before saying you have successfully logged in remotely.
 
 
 
@@ -45,30 +50,37 @@ Unfortunately, I cannot show any commands used while remotely connected, but som
 
 ## Moving Files With SCP
 Again, I was unable to login to my SSH account, but I will still write the steps to move a file with SCP.
-1. Type `scp (file name) cs15lfa22XX@ieng6.ucsd.edu:~/`, replacing XX with your personal account letters.
+
+First, type `scp (file name) cs15lfa22XX@ieng6.ucsd.edu:~/`, replacing XX with your personal account letters.
 > Again, I was unable to get my account working so I cannot show the full process.
 
 ![Image](Screenshot5.png)
 
-2. Once prompted, type in your SSH account password.
-3. Lines of code will print afterwards, showing the progress of the file copying. The file has been successfully copied once it reaches 100%.
-4. After that (to test if it worked), connect remotely using `ssh cs15lfa22XX@ieng6.ucsd.edu` and type in your password.
-5. Compile the file you moved over and run it using the commands `javac (file name)` and `java (file name)`, the last one without the suffix.
+Second, once prompted, type in your SSH account password.
+
+Third, lines of code will print afterwards, showing the progress of the file copying. The file has been successfully copied once it reaches 100%.
+
+Fourth, after that (to test if it worked), connect remotely using `ssh cs15lfa22XX@ieng6.ucsd.edu` and type in your password.
+
+Fifth, compile the file you moved over and run it using the commands `javac (file name)` and `java (file name)`, the last one without the suffix.
 
 
 
 ## Setting an SSH Key
 I was unable to login, I will update this part of the report as soon as I get my SSH login working. The general idea however, is to:
 
-1. Type `ssh-keygen` into the terminal. Once prompted, save a passphrase into a folder on your computer (it should already give you one), and then press enter again to set the default path.
+First, type `ssh-keygen` into the terminal. Once prompted, save a passphrase into a folder on your computer (it should already give you one), and then press enter again to set the default path.
 > If your operating system is on Windows, there is an additional step to saving an ssh, although it is mostly for security reasons.
 
 ![Image](Screenshot6.png)
 
-2. Login to your remote computer using your login.
-3. Once logged in, type `mkdir .ssh`, and then type `exit` to logout.
-4. Then, use the SCP method to copy the PUBLIC key folder (should end with id_rsa.pub), but the end of the codeline should be `cs15lfa22XX@ieng6.ucsd.edu:~/.ssh/authorized_keys`.
-5. You should be able to login to `ssh` and `scp` without using a password now!
+Second, login to your remote computer using your login.
+
+Third, once logged in, type `mkdir .ssh`, and then type `exit` to logout.
+
+Fourth, use the SCP method to copy the PUBLIC key folder (should end with id_rsa.pub), but the end of the codeline should be `cs15lfa22XX@ieng6.ucsd.edu:~/.ssh/authorized_keys`.
+
+Fifth, you should be able to login to `ssh` and `scp` without using a password now!
 
 
 
