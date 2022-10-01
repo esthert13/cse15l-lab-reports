@@ -6,7 +6,7 @@ This is a tutorial on how to install VS code, connect remotely to another comput
 
 
 ## Installing VS Code
-Although I currently already have CS Code installed, I will still show how to download it.
+Although I currently already have VS Code installed, I will still show how to download it.
 
 First, head to the [VS Code](https://code.visualstudio.com/download) website.
 
