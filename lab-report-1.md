@@ -1,4 +1,4 @@
-# Lab Report 2, Week 1
+# Lab Report 1
 ## Tutorial Introduction 
 This is a tutorial on how to install VS code, connect remotely to another computer, move files with SCP, set an SSH key, and optimize remote running. 
 > Although I was unable to login to my SSH account, I plan to update this lab report after I am able to get it working!

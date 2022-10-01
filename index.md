@@ -1,9 +1,9 @@
 # Esther's Website!
 ## Lab Reports
-[Lab Report 1](https://esthert13.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
+[Lab Report 0](https://esthert13.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
 * General github and markdown usage
 
-[Lab Report 2](https://esthert13.github.io/cse15l-lab-reports/lab-report-2-week-1.html)
+[Lab Report 1](https://esthert13.github.io/cse15l-lab-reports/lab-report-2-week-1.html)
 * Signing into SSH, connecting remotely, moving files with SCP, setting an SSH key, and optimizing remote running
 
 
