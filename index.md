@@ -5,6 +5,7 @@
 
 [Lab Report 1](https://esthert13.github.io/cse15l-lab-reports/lab-report-1.html)
 * Signing into SSH, connecting remotely, moving files with SCP, setting an SSH key, and optimizing remote running
+* *Updated as of October 14th*
 
 
 ***
