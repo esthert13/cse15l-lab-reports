@@ -151,7 +151,20 @@ And these are the symptoms:
 
 The fixed code is this:
 ```
-
+static List<File> getFiles(Path start) throws IOException {
+    File f = start.toFile();
+    List<File> result = new ArrayList<>();
+    if(f.isDirectory()) {
+        File[] paths = f.listFiles();
+        for(File subFile: paths) {
+            result.addAll(getFiles(subFile.toPath()));
+        }
+    }
+    else {
+        result.add(start.toFile());
+    }
+    return result;
+}
 ```
 The original code was buggy due to the fact that there is no recursive call to `getFiles`, so it only visited one directory. Not only that, the `.add` outside of the `if` statement should only happen if the given `File` was not a directory. 
 
