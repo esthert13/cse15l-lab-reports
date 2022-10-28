@@ -88,7 +88,7 @@ Although we focused on many different methods and tests, here are two examples o
 
 These two examples originally had buggy code, which caused them to fail tests that called these methods. I included the fixed code, as well as explanations as to why the original code was buggy and why it caused those particular symptoms.
 
-**THE `reversed(int[] arr)` METHOD**
+> **THE `reversed(int[] arr)` METHOD**
 
 This is the failure-inducing input:
 
@@ -132,61 +132,64 @@ The reason the original code was buggy was due to the fact that it was supposed 
 
 As you can see, the expected value at the first element of the array was 11, but actually resulted in 0. This is what failed the test, as they are supposed to be equivalent. It does not make sense for the array to be 0 since we are simply reversing the array and not deleting any elements. 
 
-**THE `getFiles(File start)` METHOD**
+> **THE `getFiles(File start)` METHOD**
 
 This is the failure-inducing input:
 
 ```
 static List<File> getFiles(File start) throws IOException {
-	  File f = start;
-	  List<File> result = new ArrayList<>();
-	  result.add(start);
-	  if(f.isDirectory()) {
+	File f = start;
+	List<File> result = new ArrayList<>();
+	result.add(start);
+	if(f.isDirectory()) {
         File[] paths = f.listFiles();
         for(File subFile: paths) {
             result.add(subFile);
         } 
-	  }
-	  return result;
+	}
+	return result;
 }
 ```
 
 This is the test for the method:
 
 ```
-
+@Test 
+public void testGetFiles() throws IOException {
+    File allFiles = new File("./technical/911report");
+    File expect = new File(".\\technical\\911report\\preface.txt");
+    List<File> expected = new ArrayList<>();
+    expected.add(expect);
+    assertEquals(expected, FileExample.getFiles(allFiles));
+}
 ```
 
 And these are the symptoms:
 
-![Image]()
+![Image](Screenshot14.png)
 
 The fixed code is this:
 
 ```
-static List<File> getFiles(Path start) throws IOException {
-    File f = start.toFile();
+static List<File> getFiles(File start) throws IOException {
+    File f = start;
     List<File> result = new ArrayList<>();
     if(f.isDirectory()) {
         File[] paths = f.listFiles();
         for(File subFile: paths) {
-            result.addAll(getFiles(subFile.toPath()));
+            result.addAll(getFiles(subFile));
         }
     }
     else {
-        result.add(start.toFile());
+        result.add(start);
     }
     return result;
 }
 ```
 
-The original code was buggy due to the fact that there is no recursive call to `getFiles`, so it only visited one directory. Not only that, the `.add` outside of the `if` statement should only happen if the given `File` was not a directory. 
+The original code was buggy due to the fact that `getFiles` was only visiting one directory. Not only that, the `.add` outside of the `if` statement was causing the directory to be added to the list when it should only be adding files since there was no `if` condition limiting it. As you can see in the image with the symptoms, the code for `getFiles` was adding the directory `.\technical\911report\` to the list as well despite the fact that it should only be adding the file `.\technical\911report\preface.txt` to the list. Therefore, with all of this information, it was possible to fix the code. 
 
 
 
 
-
-The failure-inducing input (the code of the test)
-The symptom (the failing test output)
-The bug (the code fix needed)
-Then, explain the connection between the symptom and the bug. Why does the bug cause that particular symptom for that particular input?
+End.
