@@ -7,6 +7,10 @@
 * Signing into SSH, connecting remotely, moving files with SCP, setting an SSH key, and optimizing remote running
 * *Updated as of October 14th*
 
+[Lab Report 2]()
+* Simple search engine and bug/symptom testing
+* *Updated as of October 28th* 
+
 
 ***
 
