@@ -52,8 +52,11 @@ This code goes through queries and adds elements to a separate list called `list
 Some examples of the code being implemented are:
 
 ![Image](Screenshot9.png)
+
 ![Image](Screenshot10.png)
+
 ![Image](Screenshot11.png)
+
 In the images above, "apple", "pineapple", and "anewstringtoadd" are being added to the `listOfStrings`. This calls several methods: 
 * `.add(String e)` --> `listofStrings.add(parameters[1])`, in which everything after the equal sign (=) in the URL is being added to the `listOfStrings`.
 * `.getPath()`
