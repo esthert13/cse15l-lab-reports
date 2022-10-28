@@ -68,6 +68,7 @@ In the images above, "apple", "pineapple", and "anewstringtoadd" are being added
 None of these values change, as it is simply adding a string into an arraylist of strings. 
 
 ![Image](Screenshot12.png)
+
 In this image, the desired search is "app", which results in "apple" and "pineapple", and not "anewstringtoadd" since it does not contain what was searched. It iterates through the `listOfStrings` to find which strings contain the parameter given. This also calls several methods: 
 * `.add(String e)` --> `results.add(listOfStrings.get(i))`, in which everything that contains the parameter is added to a new arraylist for printing.
 * `.getPath()`
@@ -83,6 +84,77 @@ These values, similarly, do not change as they are strings being added to a sing
 ***
 
 ## Part II: Bugs/Symptoms 
+Although we focused on many different methods and tests, here are two examples of them: in the ArrayExamples.java file, `reversed(int[] arr)`; and in the FileExample.java file, `getFiles(File start)`. 
+
+These two examples originally had buggy code, which caused them to fail tests that called these methods. I included the fixed code, as well as explanations as to why the original code was buggy and why it caused those particular symptoms.
+
+**THE `reversed(int[] arr)` METHOD**
+This is the failure-inducing input:
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+}
+```
+This is the test for the method:
+```
+@Test
+public void testReversed1() {
+    int[] input2 = { 8 , 9 , 10 , 11 };
+    assertArrayEquals(new int[]{ 11 , 10 , 9 , 8 }, ArrayExamples.reversed(input2));
+}
+```
+And these are the symptoms:
+
+![Image](Screenshot13.png)
+
+The fixed code is this:
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      newArray[i] = arr[arr.length - i - 1];
+    }
+    return newArray;
+}
+```
+The reason the original code was buggy was due to the fact that it was supposed to return a new array with reversed values, but actually was setting the original array's values to the new array, which did not have any values in the beginning. This caused the original array to have 0 as its value. It also returns the original array at the end when it should be returning the new array. 
+
+As you can see, the expected value at the first element of the array was 11, but actually resulted in 0. This is what failed the test, as they are supposed to be equivalent. It does not make sense for the array to be 0 since we are simply reversing the array and not deleting any elements. 
+
+**THE `getFiles(File start)` METHOD**
+This is the failure-inducing input:
+```
+static List<File> getFiles(File start) throws IOException {
+	  File f = start;
+	  List<File> result = new ArrayList<>();
+	  result.add(start);
+	  if(f.isDirectory()) {
+        File[] paths = f.listFiles();
+        for(File subFile: paths) {
+            result.add(subFile);
+        } 
+	  }
+	  return result;
+}
+```
+This is the test for the method:
+```
+
+```
+And these are the symptoms:
+
+![Image]()
+
+The fixed code is this:
+```
+
+```
+The original code was buggy due to the fact that there is no recursive call to `getFiles`, so it only visited one directory. Not only that, the `.add` outside of the `if` statement should only happen if the given `File` was not a directory. 
+
 
 
 
