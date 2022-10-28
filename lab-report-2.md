@@ -138,16 +138,16 @@ This is the failure-inducing input:
 
 ```
 static List<File> getFiles(File start) throws IOException {
-	File f = start;
-	List<File> result = new ArrayList<>();
-	result.add(start);
-	if(f.isDirectory()) {
+    File f = start;
+    List<File> result = new ArrayList<>();
+    result.add(start);
+    if(f.isDirectory()) {
         File[] paths = f.listFiles();
         for(File subFile: paths) {
             result.add(subFile);
         } 
-	}
-	return result;
+    }
+    return result;
 }
 ```
 
