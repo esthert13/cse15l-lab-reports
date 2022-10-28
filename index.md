@@ -7,7 +7,7 @@
 * Signing into SSH, connecting remotely, moving files with SCP, setting an SSH key, and optimizing remote running
 * *Updated as of October 14th*
 
-[Lab Report 2]()
+[Lab Report 2](https://esthert13.github.io/cse15l-lab-reports/lab-report-2.html)
 * Simple search engine and bug/symptom testing
 * *Updated as of October 28th* 
 
