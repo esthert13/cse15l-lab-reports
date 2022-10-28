@@ -89,7 +89,9 @@ Although we focused on many different methods and tests, here are two examples o
 These two examples originally had buggy code, which caused them to fail tests that called these methods. I included the fixed code, as well as explanations as to why the original code was buggy and why it caused those particular symptoms.
 
 **THE `reversed(int[] arr)` METHOD**
+
 This is the failure-inducing input:
+
 ```
 static int[] reversed(int[] arr) {
     int[] newArray = new int[arr.length];
@@ -99,7 +101,9 @@ static int[] reversed(int[] arr) {
     return arr;
 }
 ```
+
 This is the test for the method:
+
 ```
 @Test
 public void testReversed1() {
@@ -107,11 +111,13 @@ public void testReversed1() {
     assertArrayEquals(new int[]{ 11 , 10 , 9 , 8 }, ArrayExamples.reversed(input2));
 }
 ```
+
 And these are the symptoms:
 
 ![Image](Screenshot13.png)
 
 The fixed code is this:
+
 ```
 static int[] reversed(int[] arr) {
     int[] newArray = new int[arr.length];
@@ -121,12 +127,15 @@ static int[] reversed(int[] arr) {
     return newArray;
 }
 ```
+
 The reason the original code was buggy was due to the fact that it was supposed to return a new array with reversed values, but actually was setting the original array's values to the new array, which did not have any values in the beginning. This caused the original array to have 0 as its value. It also returns the original array at the end when it should be returning the new array. 
 
 As you can see, the expected value at the first element of the array was 11, but actually resulted in 0. This is what failed the test, as they are supposed to be equivalent. It does not make sense for the array to be 0 since we are simply reversing the array and not deleting any elements. 
 
 **THE `getFiles(File start)` METHOD**
+
 This is the failure-inducing input:
+
 ```
 static List<File> getFiles(File start) throws IOException {
 	  File f = start;
@@ -141,15 +150,19 @@ static List<File> getFiles(File start) throws IOException {
 	  return result;
 }
 ```
+
 This is the test for the method:
+
 ```
 
 ```
+
 And these are the symptoms:
 
 ![Image]()
 
 The fixed code is this:
+
 ```
 static List<File> getFiles(Path start) throws IOException {
     File f = start.toFile();
@@ -166,6 +179,7 @@ static List<File> getFiles(Path start) throws IOException {
     return result;
 }
 ```
+
 The original code was buggy due to the fact that there is no recursive call to `getFiles`, so it only visited one directory. Not only that, the `.add` outside of the `if` statement should only happen if the given `File` was not a directory. 
 
 
