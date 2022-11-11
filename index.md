@@ -11,6 +11,9 @@
 * Simple search engine and bug/symptom testing
 * *Updated as of October 28th* 
 
+[Lab Report 3](https://esthert13.github.io/cse15l-lab-reports/lab-report-3.html)
+* Examples of using the command `less`.
+* *Updated as of November 11th*
 
 ***
 
