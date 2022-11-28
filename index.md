@@ -18,7 +18,7 @@
 [Lab Report 4](https://esthert13.github.io/cse15l-lab-reports/lab-report-4.html)
 * NOT COMPLETE -- UNDER REVISION
 
-[Lab Report 6](https://esthert13.github.io/cse15l-lab-reports/lab-report-5.html)
+[Lab Report 5](https://esthert13.github.io/cse15l-lab-reports/lab-report-5.html)
 * Autograding script
 * *Updated as of November 28th*
 
